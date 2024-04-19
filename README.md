@@ -17,7 +17,36 @@ https://basic-calculator-jet.vercel.app/
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/your-username/basic-calculator.git](https://github.com/AviAcharya1/Basic-calculator.git)
+git clone https://github.com/AviAcharya1/Basic-calculator.git
+```
+2. Navigate to the project directory:
+- cd basic-calculator
+  
+3.Install dependencies: npm install or npm i 
+
+## USAGE
+
+1. To start Development server: npm run dev
+2. Open your web browser and visit http://localhost:3000 to see the application.
+Enter two numbers in the input fields.
+Click the corresponding operation button (+, -, *, /, %, **) to perform the calculation.
+The result will be displayed on the screen.
+Technologies Used
+React
+React Hooks (useState, useReducer, useEffect)
+CSS
+Contributing
+Contributions are welcome! If you find any issues or want to enhance the functionality, feel free to open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License.
+
+Acknowledgements
+React Documentation
+CSS Tricks
+Contact
+If you have any questions or suggestions, feel free to reach out to me at your-email@example.com.
+   
 
 
 
