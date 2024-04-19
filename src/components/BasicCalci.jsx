@@ -1,58 +1,109 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import './CSS/BasicCalci.css';
-let initialValue = 0;
 
-let calciReducer = (cdata, action) => {
+let initialValue = {
+  num1: '',
+  num2: '',
+  result: 0,
+};
+
+let calciReducer = (state, action) => {
   switch (action.type) {
     case '+':
-      return action.payload.num1 + action.payload.num2;
+      return {
+        ...state,
+        result: action.payload.num1 + action.payload.num2,
+      };
     case '-':
-      return action.payload.num1 - action.payload.num2;
+      return {
+        ...state,
+        result: action.payload.num1 - action.payload.num2,
+      };
     case '*':
-      return action.payload.num1 * action.payload.num2;
+      return {
+        ...state,
+        result: action.payload.num1 * action.payload.num2,
+      };
     case '/':
-      return action.payload.num1 / action.payload.num2;
+      return {
+        ...state,
+        result: action.payload.num1 / action.payload.num2,
+      };
     case '%':
-      return (action.payload.num1 / action.payload.num2)*100;
+      return {
+        ...state,
+        result: (action.payload.num1 / action.payload.num2) * 100,
+      };
     case '**':
-      return action.payload.num1 ** action.payload.num2;
+      return {
+        ...state,
+        result: action.payload.num1 ** action.payload.num2,
+      };
+    case 'reset':
+      return initialValue;
+    case 'num1':
+      return {
+        ...state,
+        num1: action.payload,
+      };
+    case 'num2':
+      return {
+        ...state,
+        num2: action.payload,
+      };
     default:
-      return cdata;
+      return state;
   }
 };
+
 function BasicCalci() {
   let [action, setAction] = useState('');
-  let [num1, setNum1] = useState('');
-  let [num2, setNum2] = useState('');
-  let [result, dataDispatcher] = useReducer(calciReducer, initialValue);
-  
+  let [state, dataDispatcher] = useReducer(calciReducer, initialValue);
+
   useEffect(() => {
-    if (num1 && num2) {
-      dataDispatcher({type: action, payload: { num1: parseFloat(num1), num2: parseFloat(num2)},
+    if (state.num1 && state.num2) {
+      dataDispatcher({
+        type: action,
+        payload: { num1: parseFloat(state.num1), num2: parseFloat(state.num2) },
       });
     }
-  }, [action, num1, num2]);
+  }, [action, state.num1, state.num2]);
 
-  let updateNum1 = ({ target: { value } }) => {
-    setNum1(value);
+  const handleReset = () => {
+    dataDispatcher({ type: 'reset' });
   };
 
-  let updateNum2 = ({ target: { value } }) => {
-    setNum2(value);
-  };
   return (
     <div className='calci'>
       <h1>BASIC-CALCULATOR</h1>
-      <input type="text" placeholder='Enter number' onChange={updateNum1} />
-      <input type="text" placeholder='Enter number' onChange={updateNum2} />
-      <h1>RESULT:{result}</h1>
+      <input
+        type="text"
+        placeholder='Enter number'
+        onChange={(e) => dataDispatcher({
+          type: 'num1',
+          payload: e.target.value
+        })}
+        value={state.num1}
+      />
+      <input
+        type="text"
+        placeholder='Enter number'
+        onChange={(e) => dataDispatcher({
+          type: 'num2',
+          payload: e.target.value
+        })}
+        value={state.num2}
+      />
+      <h1>RESULT:{state.result}</h1>
       <button onClick={() => setAction('+')}>+</button>
       <button onClick={() => setAction('-')}>-</button>
       <button onClick={() => setAction('*')}>*</button>
       <button onClick={() => setAction('/')}>/</button>
       <button onClick={() => setAction('%')}>%</button>
       <button onClick={() => setAction('**')}>**</button>
+      <button onClick={handleReset}>RESET</button>
     </div>
   );
 }
+
 export default BasicCalci;
