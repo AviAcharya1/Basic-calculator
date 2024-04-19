@@ -1,0 +1,86 @@
+body {
+    height: 100vh;
+    margin: 0;
+    /* font-family: 'Arial', sans-serif; */
+    background-color: #110303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .calci {
+
+    /* border:2px solid red; */
+    height: 500px;
+    width: 350px;
+    background-color: #0418185f;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(132, 179, 209, 0.847);
+  }
+  
+  input {
+    padding: 15px;
+    border: none;
+    text-decoration: none;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    outline: none;
+    /* border-style:hidden ; */
+    width: 60%;
+    background-color: rgb(233, 220, 220);
+  }
+  
+  h1 {
+    color: #cdbdbd;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* box-shadow:  0 0 10px #7db5b9; */
+    overflow: hidden;
+  }
+  
+  button {
+    /* border: 2px solid red; */
+    background-color: #2679b5;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-flex;
+    font-weight: 900;
+    margin: 20px 15px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgb(209, 218, 220);
+    transition: background-color 0.4s;
+  }
+  
+  button:hover {
+    background-color: #258ec2;
+  }
+  
+  button:active {
+    background-color: #f1c205;
+  }
+  
+  @media (max-width: 740px) {
+    .calci {
+        margin: 4rem;
+        padding: 4px;
+        height: 560px;
+        width: 300px;
+    }
+    .calci h1{
+        padding: 1rem;
+    }
+
+    input{
+        margin: 1rem 2rem;
+    }
+    button {
+        margin: 0.7rem;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+  }
+  
