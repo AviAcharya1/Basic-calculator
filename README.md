@@ -3,6 +3,7 @@
 This is a simple calculator application built using React and React Hooks. It allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, division, percentage calculation, and exponentiation.
 
 ## This project is live @:
+
 https://basic-calculator-jet.vercel.app/
 
 ## Features
@@ -19,6 +20,7 @@ https://basic-calculator-jet.vercel.app/
 ```bash
 git clone https://github.com/AviAcharya1/Basic-calculator.git
 ```
+
 2. Navigate to the project directory:
 - cd basic-calculator
   
@@ -42,18 +44,16 @@ git clone https://github.com/AviAcharya1/Basic-calculator.git
 
 - Contributions are welcome! If you find any issues or want to enhance the functionality, feel free to open an issue or submit a pull request.
 
-License
-This project is licensed under the MIT License.
+## License
 
-Acknowledgements
-React Documentation
-CSS Tricks
-Contact
-If you have any questions or suggestions, feel free to reach out to me at your-email@example.com.
+- This project is licensed under the MIT License.
+
+## Acknowledgements
+
+- React Documentation(https://legacy.reactjs.org/docs/getting-started.html)
+- CSS Tricks (https://css-tricks.com/)
+  
+## Contact
+
+- If you have any questions or suggestions, feel free to reach out to me at aviacharysr@gmail.com.
    
-
-
-
-
-
-
