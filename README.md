@@ -1,4 +1,8 @@
-# React + Vite
+# Basic Calculator
+
+## This project is live @:
+https://basic-calculator-jet.vercel.app/
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
